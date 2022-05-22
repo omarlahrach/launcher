@@ -1,0 +1,62 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ErgomindPro2" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/light_colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/light_colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/light_colorOnPrimary</item>
+        <item name="android:colorBackground">@color/light_colorBackground</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/light_colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/light_colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/light_colorOnSecondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/light_colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="FabSettingsStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabSettings</item>
+    </style>
+
+    <style name="FabThemeStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabTheme</item>
+    </style>
+
+    <style name="FabFavoriteStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabFavorite</item>
+    </style>
+
+    <style name="FabHelpStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabHelp</item>
+    </style>
+
+    <style name="FabSettings" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeBottomRight">@dimen/_50sdp</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+    </style>
+
+    <style name="FabTheme" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_50sdp</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+    </style>
+
+    <style name="FabFavorite" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopRight">@dimen/_50sdp</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+    </style>
+
+    <style name="FabHelp" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopLeft">@dimen/_50sdp</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+    </style>
+</resources>
