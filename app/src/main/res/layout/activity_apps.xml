@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.views.activities.AppsActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="@dimen/_24ssp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_50sdp"
+        app:layout_constraintBottom_toTopOf="@id/apps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/apps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="@dimen/_4sdp"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbarThumbVertical="@drawable/bg_scroll"
+        android:scrollbars="vertical"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_65sdp"
+        android:layoutAnimation="@anim/layout_animation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintVertical_weight="8" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_fabs"
+        android:name="com.ailyan.ergomindpro2.ui.views.fragments.FabsFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

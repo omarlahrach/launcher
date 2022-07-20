@@ -24,11 +24,13 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
     private final List<AppViewModel> apps;
     private final LayoutInflater mInflater;
     private AppsAdapter.ItemClickListener mClickListener;
+    private final int rows;
 
-    public AppsAdapter(Context context, List<AppViewModel> apps) {
+    public AppsAdapter(Context context, List<AppViewModel> apps, int rows) {
         this.mInflater = LayoutInflater.from(context);
         this.apps = apps;
         this.context = context;
+        this.rows = rows;
     }
 
     @NonNull
@@ -37,7 +39,7 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
         View view = mInflater.inflate(R.layout.item_app, parent, false);
         GridLayoutManager.LayoutParams lp = (GridLayoutManager.LayoutParams) view.getLayoutParams();
         ViewGroup.MarginLayoutParams lpv = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        lp.height = parent.getMeasuredHeight() / 4 - lpv.topMargin * 2;
+        lp.height = parent.getMeasuredHeight() / rows - lpv.topMargin * 2;
         view.setLayoutParams(lp);
         return new ViewHolder(view);
     }
@@ -70,7 +72,7 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
 
         @Override
         public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            if (mClickListener != null) mClickListener.onAppClick(getAdapterPosition());
         }
     }
 
@@ -79,6 +81,6 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
     }
 
     public interface ItemClickListener {
-        void onItemClick(View view, int position);
+        void onAppClick(int position);
     }
 }

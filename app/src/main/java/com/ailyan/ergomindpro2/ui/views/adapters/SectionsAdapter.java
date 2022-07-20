@@ -12,11 +12,12 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ailyan.ergomindpro2.R;
 import com.ailyan.ergomindpro2.ui.viewModels.SectionViewModel;
+import com.ailyan.ergomindpro2.utilities.Section;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;
-import com.ailyan.ergomindpro2.R;
-import com.google.android.material.card.MaterialCardView;
 
 public class SectionsAdapter extends RecyclerView.Adapter<SectionsAdapter.ViewHolder> {
 
@@ -24,11 +25,13 @@ public class SectionsAdapter extends RecyclerView.Adapter<SectionsAdapter.ViewHo
     private final List<SectionViewModel> sections;
     private final LayoutInflater mInflater;
     private SectionsAdapter.ItemClickListener mClickListener;
+    private final int rows;
 
-    public SectionsAdapter(Context context, List<SectionViewModel> sections) {
+    public SectionsAdapter(Context context, List<SectionViewModel> sections, int rows) {
         this.mInflater = LayoutInflater.from(context);
         this.sections = sections;
         this.context = context;
+        this.rows = rows;
     }
 
     @NonNull
@@ -37,7 +40,7 @@ public class SectionsAdapter extends RecyclerView.Adapter<SectionsAdapter.ViewHo
         View view = mInflater.inflate(R.layout.item_section, parent, false);
         GridLayoutManager.LayoutParams lp = (GridLayoutManager.LayoutParams) view.getLayoutParams();
         ViewGroup.MarginLayoutParams lpv = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        lp.height = parent.getMeasuredHeight() / 3 - lpv.topMargin * 2;
+        lp.height = parent.getMeasuredHeight() / rows - lpv.topMargin * 2;
         view.setLayoutParams(lp);
         return new ViewHolder(view);
     }
@@ -70,7 +73,40 @@ public class SectionsAdapter extends RecyclerView.Adapter<SectionsAdapter.ViewHo
 
         @Override
         public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            Section section;
+            switch (getAdapterPosition()) {
+                case 0:
+                    section = Section.COLLECTIVE_GAMES;
+                    break;
+                case 1:
+                    section = Section.MULTIPLAYER_GAMES;
+                    break;
+                case 2:
+                    section = Section.TV_REPLAY;
+                    break;
+                case 3:
+                    section = Section.KARAOKE;
+                    break;
+                case 4:
+                    section = Section.MUSIC;
+                    break;
+                case 5:
+                    section = Section.RADIO;
+                    break;
+                case 6:
+                    section = Section.VISIO;
+                    break;
+                case 7:
+                    section = Section.PHOTOS;
+                    break;
+                case 8:
+                    section = Section.INFO;
+                    break;
+                default:
+                    section = null;
+                    break;
+            }
+            if (mClickListener != null) mClickListener.onSectionClick(view, section);
         }
     }
 
@@ -79,6 +115,6 @@ public class SectionsAdapter extends RecyclerView.Adapter<SectionsAdapter.ViewHo
     }
 
     public interface ItemClickListener {
-        void onItemClick(View view, int position);
+        void onSectionClick(View view, Section section);
     }
 }

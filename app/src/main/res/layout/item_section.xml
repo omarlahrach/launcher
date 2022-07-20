@@ -4,16 +4,17 @@
     android:id="@+id/cardView_section"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/_4sdp">
+    android:layout_margin="@dimen/_4sdp"
+    app:cardCornerRadius="@dimen/_4sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/_10sdp">
+        android:padding="@dimen/_8sdp">
 
         <ImageView
             android:id="@+id/imageView_section"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:contentDescription="@string/section_icon"
             app:layout_constraintBottom_toTopOf="@id/textView_section"
@@ -23,10 +24,10 @@
 
         <TextView
             android:id="@+id/textView_section"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:textSize="@dimen/_20sdp"
             android:gravity="center"
+            android:textSize="@dimen/_14ssp"
             android:textColor="?attr/colorOnPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

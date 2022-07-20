@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Ergomind Pro 2</string>
     <!-- sections title -->
-    <string name="group_games">Jeux de groupe</string>
+    <string name="collective_games">Jeux de groupe</string>
     <string name="multiplayer_games">Jeux multijoueurs</string>
     <string name="tv_replay">TV Replay</string>
     <string name="karaoke">Karaoke</string>
@@ -10,12 +10,25 @@
     <string name="visio">Visio</string>
     <string name="photos">Photos</string>
     <string name="infos">Infos</string>
-    <!-- apps title -->
+    <!-- collective games title -->
     <string name="quiz">Quizz</string>
-    <string name="intrus">Intrus</string>
+    <string name="flag">Drapeau</string>
+    <string name="intruder">Intrus</string>
+    <string name="anagram">Anagram</string>
+    <!-- multiplayer games title -->
+    <string name="lotto">Loto</string>
+    <string name="bingo">Bingo</string>
     <!-- icons description -->
     <string name="section_icon">section icon</string>
     <string name="app_icon">app icon</string>
     <!-- buttons description -->
     <string name="main_button">main button</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="action_sign_in">Se connecter</string>
+    <string name="action_register">S\'inscrire</string>
+
+    <string name="hint_username">Nom d\'utilisateur</string>
+    <string name="hint_password">Mot de passe</string>
+
+    <string name="login_failed">"Login failed"</string>
 </resources>
